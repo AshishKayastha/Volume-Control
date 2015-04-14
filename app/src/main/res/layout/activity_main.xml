@@ -1,150 +1,156 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/bluePrimary"
-        android:elevation="4dp"
-        android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat"
-        app:theme="@style/ToolbarStyle" />
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/alarmIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/toolbar"
-        android:layout_marginTop="@dimen/margin_12dp"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_alarm" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bluePrimary"
+            android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat"
+            app:theme="@style/ToolbarStyle" />
 
-    <TextView
-        android:id="@+id/textViewAlarm"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:layout_toEndOf="@id/alarmIcon"
-        android:layout_toRightOf="@id/alarmIcon"
-        android:text="@string/alarm_volume_txt" />
+        <ImageView
+            android:id="@+id/alarmIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_alarm" />
 
-    <SeekBar
-        android:id="@+id/alarmSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewAlarm"
-        android:layout_toEndOf="@id/alarmIcon"
-        android:layout_toRightOf="@id/alarmIcon" />
+        <TextView
+            android:id="@+id/textViewAlarm"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/alarmIcon"
+            android:layout_toRightOf="@id/alarmIcon"
+            android:text="@string/alarm_volume_txt" />
 
-    <ImageView
-        android:id="@+id/musicIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/alarmSeekBar"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_music" />
+        <SeekBar
+            android:id="@+id/alarmSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewAlarm"
+            android:layout_toEndOf="@id/alarmIcon"
+            android:layout_toRightOf="@id/alarmIcon" />
 
-    <TextView
-        android:id="@+id/textViewMusic"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/alarmSeekBar"
-        android:layout_toEndOf="@id/musicIcon"
-        android:layout_toRightOf="@id/musicIcon"
-        android:text="@string/music_volume_txt" />
+        <ImageView
+            android:id="@+id/musicIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/alarmSeekBar"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_music" />
 
-    <SeekBar
-        android:id="@+id/musicSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewMusic"
-        android:layout_toEndOf="@id/musicIcon"
-        android:layout_toRightOf="@id/musicIcon" />
+        <TextView
+            android:id="@+id/textViewMusic"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/alarmSeekBar"
+            android:layout_toEndOf="@id/musicIcon"
+            android:layout_toRightOf="@id/musicIcon"
+            android:text="@string/music_volume_txt" />
 
-    <ImageView
-        android:id="@+id/ringIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/musicSeekBar"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_ring" />
+        <SeekBar
+            android:id="@+id/musicSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewMusic"
+            android:layout_toEndOf="@id/musicIcon"
+            android:layout_toRightOf="@id/musicIcon" />
 
-    <TextView
-        android:id="@+id/textViewRing"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/musicSeekBar"
-        android:layout_toEndOf="@id/ringIcon"
-        android:layout_toRightOf="@id/ringIcon"
-        android:text="@string/ringtone_volume_txt" />
+        <ImageView
+            android:id="@+id/ringIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/musicSeekBar"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_ring" />
 
-    <SeekBar
-        android:id="@+id/ringSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewRing"
-        android:layout_toEndOf="@id/ringIcon"
-        android:layout_toRightOf="@id/ringIcon" />
+        <TextView
+            android:id="@+id/textViewRing"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/musicSeekBar"
+            android:layout_toEndOf="@id/ringIcon"
+            android:layout_toRightOf="@id/ringIcon"
+            android:text="@string/ringtone_volume_txt" />
 
-    <ImageView
-        android:id="@+id/notificationIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/ringSeekBar"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_notification" />
+        <SeekBar
+            android:id="@+id/ringSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewRing"
+            android:layout_toEndOf="@id/ringIcon"
+            android:layout_toRightOf="@id/ringIcon" />
 
-    <TextView
-        android:id="@+id/textViewNotification"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/ringSeekBar"
-        android:layout_toEndOf="@id/notificationIcon"
-        android:layout_toRightOf="@id/notificationIcon"
-        android:text="@string/notification_volume_txt" />
+        <ImageView
+            android:id="@+id/notificationIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/ringSeekBar"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_notification" />
 
-    <SeekBar
-        android:id="@+id/notificationSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewNotification"
-        android:layout_toEndOf="@id/notificationIcon"
-        android:layout_toRightOf="@id/notificationIcon" />
+        <TextView
+            android:id="@+id/textViewNotification"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/ringSeekBar"
+            android:layout_toEndOf="@id/notificationIcon"
+            android:layout_toRightOf="@id/notificationIcon"
+            android:text="@string/notification_volume_txt" />
 
-    <ImageView
-        android:id="@+id/systemIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/notificationSeekBar"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_system" />
+        <SeekBar
+            android:id="@+id/notificationSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewNotification"
+            android:layout_toEndOf="@id/notificationIcon"
+            android:layout_toRightOf="@id/notificationIcon" />
 
-    <TextView
-        android:id="@+id/textViewSystem"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/notificationSeekBar"
-        android:layout_toEndOf="@id/systemIcon"
-        android:layout_toRightOf="@id/systemIcon"
-        android:text="@string/system_volume_txt" />
+        <ImageView
+            android:id="@+id/systemIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/notificationSeekBar"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_system" />
 
-    <SeekBar
-        android:id="@+id/systemSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewSystem"
-        android:layout_toEndOf="@id/systemIcon"
-        android:layout_toRightOf="@id/systemIcon" />
+        <TextView
+            android:id="@+id/textViewSystem"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/notificationSeekBar"
+            android:layout_toEndOf="@id/systemIcon"
+            android:layout_toRightOf="@id/systemIcon"
+            android:text="@string/system_volume_txt" />
 
-    <ImageView
-        android:id="@+id/voiceCallIcon"
-        style="@style/ImageViewStyle"
-        android:layout_below="@id/systemSeekBar"
-        android:contentDescription="@null"
-        android:src="@drawable/btn_voice_call" />
+        <SeekBar
+            android:id="@+id/systemSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewSystem"
+            android:layout_toEndOf="@id/systemIcon"
+            android:layout_toRightOf="@id/systemIcon" />
 
-    <TextView
-        android:id="@+id/textViewVoiceCall"
-        style="@style/TextViewStyle"
-        android:layout_below="@+id/systemSeekBar"
-        android:layout_toEndOf="@id/voiceCallIcon"
-        android:layout_toRightOf="@id/voiceCallIcon"
-        android:text="@string/call_volume_txt" />
+        <ImageView
+            android:id="@+id/voiceCallIcon"
+            style="@style/ImageViewStyle"
+            android:layout_below="@id/systemSeekBar"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_voice_call" />
 
-    <SeekBar
-        android:id="@+id/voiceCallSeekBar"
-        style="@style/SeekbarStyle"
-        android:layout_below="@+id/textViewVoiceCall"
-        android:layout_toEndOf="@id/voiceCallIcon"
-        android:layout_toRightOf="@id/voiceCallIcon" />
+        <TextView
+            android:id="@+id/textViewVoiceCall"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/systemSeekBar"
+            android:layout_toEndOf="@id/voiceCallIcon"
+            android:layout_toRightOf="@id/voiceCallIcon"
+            android:text="@string/call_volume_txt" />
 
-</RelativeLayout>
+        <SeekBar
+            android:id="@+id/voiceCallSeekBar"
+            style="@style/SeekbarStyle"
+            android:layout_below="@+id/textViewVoiceCall"
+            android:layout_toEndOf="@id/voiceCallIcon"
+            android:layout_toRightOf="@id/voiceCallIcon" />
+
+    </RelativeLayout>
+
+</ScrollView>
