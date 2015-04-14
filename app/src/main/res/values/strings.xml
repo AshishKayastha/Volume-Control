@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Volume Control</string>
     <string name="action_settings">Settings</string>
+    <string name="alarm_volume_txt">Alarm</string>
+    <string name="music_volume_txt">Music</string>
+    <string name="ringtone_volume_txt">Ringtone</string>
+    <string name="notification_volume_txt">Notification</string>
+    <string name="system_volume_txt">System</string>
+    <string name="call_volume_txt">Voicecall</string>
 </resources>
