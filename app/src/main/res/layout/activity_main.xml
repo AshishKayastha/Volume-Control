@@ -25,7 +25,7 @@
         android:id="@+id/textViewAlarm"
         style="@style/TextViewStyle"
         android:layout_below="@+id/toolbar"
-        android:layout_marginTop="@dimen/margin_12dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_toEndOf="@id/alarmIcon"
         android:layout_toRightOf="@id/alarmIcon"
         android:text="@string/alarm_volume_txt" />
