@@ -5,31 +5,21 @@
 
     <TextView
         android:id="@+id/appDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+        style="@style/AboutTextStyle"
         android:text="@string/about_app_description"
-        android:textColor="@android:color/white"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/developedBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/AboutTextStyle"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:text="@string/developed_by_text"
-        android:textColor="@android:color/white"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/devName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/AboutTextStyle"
         android:text="Ashish Kayastha"
-        android:textColor="@android:color/white"
         android:textSize="18sp" />
 
 </LinearLayout>
