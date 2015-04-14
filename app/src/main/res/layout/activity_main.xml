@@ -45,38 +45,38 @@
                 android:layout_toRightOf="@id/alarmIcon" />
 
             <ImageView
-                android:id="@+id/musicIcon"
+                android:id="@+id/mediaIcon"
                 style="@style/ImageViewStyle"
                 android:layout_below="@id/alarmSeekBar"
                 android:contentDescription="@null"
-                android:src="@drawable/btn_music" />
+                android:src="@drawable/btn_media" />
 
             <TextView
-                android:id="@+id/textViewMusic"
+                android:id="@+id/textViewMedia"
                 style="@style/TextViewStyle"
                 android:layout_below="@+id/alarmSeekBar"
-                android:layout_toEndOf="@id/musicIcon"
-                android:layout_toRightOf="@id/musicIcon"
-                android:text="@string/music_volume_txt" />
+                android:layout_toEndOf="@id/mediaIcon"
+                android:layout_toRightOf="@id/mediaIcon"
+                android:text="@string/media_volume_txt" />
 
             <SeekBar
-                android:id="@+id/musicSeekBar"
+                android:id="@+id/mediaSeekBar"
                 style="@style/SeekbarStyle"
-                android:layout_below="@+id/textViewMusic"
-                android:layout_toEndOf="@id/musicIcon"
-                android:layout_toRightOf="@id/musicIcon" />
+                android:layout_below="@+id/textViewMedia"
+                android:layout_toEndOf="@id/mediaIcon"
+                android:layout_toRightOf="@id/mediaIcon" />
 
             <ImageView
                 android:id="@+id/ringIcon"
                 style="@style/ImageViewStyle"
-                android:layout_below="@id/musicSeekBar"
+                android:layout_below="@id/mediaSeekBar"
                 android:contentDescription="@null"
                 android:src="@drawable/btn_ring" />
 
             <TextView
                 android:id="@+id/textViewRing"
                 style="@style/TextViewStyle"
-                android:layout_below="@+id/musicSeekBar"
+                android:layout_below="@+id/mediaSeekBar"
                 android:layout_toEndOf="@id/ringIcon"
                 android:layout_toRightOf="@id/ringIcon"
                 android:text="@string/ringtone_volume_txt" />

@@ -1,11 +1,18 @@
 package com.ashish.volumecontrol;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -27,14 +34,14 @@ public class MainActivity extends ActionBarActivity {
 
         // Initialize various SeekBar
         final SeekBar alarmSeekBar = (SeekBar) findViewById(R.id.alarmSeekBar);
-        final SeekBar musicSeekBar = (SeekBar) findViewById(R.id.musicSeekBar);
+        final SeekBar mediaSeekBar = (SeekBar) findViewById(R.id.mediaSeekBar);
         final SeekBar ringSeekBar = (SeekBar) findViewById(R.id.ringSeekBar);
         final SeekBar notificationSeekBar = (SeekBar) findViewById(R.id.notificationSeekBar);
         final SeekBar systemSeekBar = (SeekBar) findViewById(R.id.systemSeekBar);
         final SeekBar voiceSeekBar = (SeekBar) findViewById(R.id.voiceCallSeekBar);
 
         final TextView alarmTextView = (TextView) findViewById(R.id.textViewAlarm);
-        final TextView musicTextView = (TextView) findViewById(R.id.textViewMusic);
+        final TextView mediaTextView = (TextView) findViewById(R.id.textViewMedia);
         final TextView ringTextView = (TextView) findViewById(R.id.textViewRing);
         final TextView notificationTextView = (TextView) findViewById(R.id.textViewNotification);
         final TextView systemTextView = (TextView) findViewById(R.id.textViewSystem);
@@ -42,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Control various volumes and set data accordingly
         initControl(alarmSeekBar, AudioManager.STREAM_ALARM, alarmTextView, getString(R.string.alarm_volume_txt));
-        initControl(musicSeekBar, AudioManager.STREAM_MUSIC, musicTextView, getString(R.string.music_volume_txt));
+        initControl(mediaSeekBar, AudioManager.STREAM_MUSIC, mediaTextView, getString(R.string.media_volume_txt));
         initControl(ringSeekBar, AudioManager.STREAM_RING, ringTextView, getString(R.string.ringtone_volume_txt));
         initControl(notificationSeekBar, AudioManager.STREAM_NOTIFICATION, notificationTextView,
                 getString(R.string.notification_volume_txt));
@@ -90,6 +97,50 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        return id == R.id.action_settings || super.onOptionsItemSelected(item);
+        switch (id) {
+
+            case R.id.action_about:
+                showAboutDialog();
+                return true;
+
+            case R.id.action_settings:
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showAboutDialog() {
+        final LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View aboutView = inflater.inflate(R.layout.about_dialog, null);
+
+        final TextView appDescriptionText = (TextView) aboutView.findViewById(R.id.appDescription);
+        appDescriptionText.setText(getString(R.string.app_name) + " " + getAppVersion() + "\n\n" +
+                getString(R.string.about_app_description));
+
+        final TextView developedByText = (TextView) aboutView.findViewById(R.id.developedBy);
+        developedByText.setText(Html.fromHtml("<u>" + getString(R.string.developed_by_text) + "</u>"));
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.about_txt))
+                .setView(aboutView)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).create().show();
+    }
+
+    private String getAppVersion() {
+        final PackageManager pm = getPackageManager();
+        final String packageName = getPackageName();
+        String version = "";
+        try {
+            PackageInfo pi = pm.getPackageInfo(packageName, 0);
+            version = pi.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return version;
     }
 }
