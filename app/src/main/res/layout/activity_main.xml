@@ -154,6 +154,26 @@
                 android:layout_toEndOf="@id/voiceCallIcon"
                 android:layout_toRightOf="@id/voiceCallIcon" />
 
+            <ImageView
+                android:id="@+id/silentIcon"
+                style="@style/ImageViewStyle"
+                android:layout_below="@id/voiceCallSeekBar"
+                android:contentDescription="@null"
+                android:src="@drawable/btn_silent" />
+
+            <TextView
+                android:id="@+id/silentTextView"
+                style="@style/TextViewStyle.SwitchText"
+                android:layout_below="@id/voiceCallSeekBar"
+                android:layout_toEndOf="@id/silentIcon"
+                android:layout_toRightOf="@id/silentIcon"
+                android:text="@string/silent_mode_off_txt" />
+
+            <Switch
+                android:id="@+id/silentSwitch"
+                style="@style/SwitchStyle"
+                android:layout_below="@id/voiceCallSeekBar" />
+
         </RelativeLayout>
 
     </ScrollView>

@@ -6,20 +6,19 @@
     <TextView
         android:id="@+id/appDescription"
         style="@style/AboutTextStyle"
-        android:text="@string/about_app_description"
-        android:textSize="18sp" />
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="@string/about_app_description" />
 
     <TextView
         android:id="@+id/developedBy"
         style="@style/AboutTextStyle"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="@string/developed_by_text"
-        android:textSize="20sp" />
+        android:text="@string/developed_by_text" />
 
     <TextView
         android:id="@+id/devName"
         style="@style/AboutTextStyle"
-        android:text="Ashish Kayastha"
-        android:textSize="18sp" />
+        android:text="@string/dev_name" />
 
 </LinearLayout>

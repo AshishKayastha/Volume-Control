@@ -9,5 +9,8 @@
     <string name="call_volume_txt">Voice call</string>
     <string name="about_txt">About</string>
     <string name="developed_by_text">Developed By:</string>
+    <string name="dev_name">Ashish Kayastha</string>
     <string name="about_app_description">Volume Control is a simple app to control device\'s volume such as alarm, media, ringtone, notifications, etc.</string>
+    <string name="silent_mode_on_txt">Silent Mode On</string>
+    <string name="silent_mode_off_txt">Silent Mode Off</string>
 </resources>
